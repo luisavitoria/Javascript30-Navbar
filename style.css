@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: rgb(253, 238, 238);
+    width: 80%;
+    min-height: 100vh;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.btn-modal {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.menu, .list-buttons {
+    display: none;
+}
+
+.menu__item:not(:first-child) {
+    margin-left: 3rem;
+}
+
+.menu__item:link {
+    text-decoration: none;
+}
+
+.list-buttons .btn {
+    margin-left: 1rem;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 3rem;
+    
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    margin-left: -30px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 15%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* Modal */
+.modal{
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 3rem;
+    margin-top: 2rem;
+    width: 80%;
+
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: none;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header__title {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.modal-content{
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content__text {
+    margin-left: 0.5rem;
+}
+.modal-content__title {
+    color: rgb(4, 20, 49);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4rem 0 6rem;
+}
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main-body__title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.main-body__title span {
+    color: rgb(230, 190, 16);
+}
+
+.main-body__text {
+    margin-bottom: 1rem;
+}
+
+.text {
+    color: rgba(53, 47, 47, 0.664);
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+.btn {
+    padding: 15px 30px;
+    background-color: rgb(8, 88, 8);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review {
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.review__logo {
+    max-height: 2rem;
+    margin-left:0.5rem;
+}
+
+.main-hero {
+    display: none;
+    width: 30%;
+}
+
+.main-hero img {
+    width: 100%;
+}
+
+/* Footer */
+.footer__text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer__list-logo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer__list-logo img {
+    max-height: 3rem;
+    width: auto;
+    margin: 0 1rem 1rem;
+}
+
+/* MEDIA QUERY */
+
+@media screen and (min-width: 600px){
+    body {
+        width: 70%;
+        margin: 30px auto;
+    }
+
+    /* header */
+    .modal {
+        width: 70%;
+    }
+
+    /* main content */
+    .main-body {
+        align-items: center;
+    }
+
+    .main-body__title, .main-body__text {
+        text-align: center;
+    }
+
+    .review {
+        justify-content: center;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .btn-modal {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 920px) {
+    body {
+        width: 80%;
+    }
+
+    /* header */
+    .btn-modal {
+        display: none;
+    }
+
+    .menu {
+    display: flex;
+    }
+
+    .list-buttons {
+        display: block;
+    }
+
+    /* main */
+    .main-content {
+        margin: 7em 0;
+        
+    }
+
+    .main-body {
+        align-items: flex-start;
+        width: 50%;
+    }
+
+    .main-body__text, .main-body__title {
+        text-align: left;
+    }
+
+    .main-body__title {
+        font-size: 4rem;
+    }
+
+    .main-hero {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .main-content {
+        margin: 4rem 0
+    }
+}
